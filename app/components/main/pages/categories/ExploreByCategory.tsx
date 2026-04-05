@@ -22,16 +22,17 @@ const ExploreByCategory = () => {
     fetchCategories();
   }, []);
   return (
-    <div>
-      <div className="flex justify-between items-center mt-10 pt-10">
-        <h2 className="text-5xl font-semibold mb-8">
+    <div className="bg-white">
+    <div className="container mx-auto px-4 md:px-0">
+      <div className="flex justify-between items-center md:mt-10">
+        <h2 className="text-3xl md:text-5xl font-semibold my-8">
           Explore by <span className="text-blue-500">Category</span>
         </h2>
-        <p className="text-blue-500 text-[16px]">Show all jobs</p>
+        <p className="text-blue-500 text-[16px] hidden md:block">Show all jobs</p>
       </div>
 
       {/* Category Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-5">
         {loading ? (
           <p>Loading categories...</p>
         ) : (
@@ -40,6 +41,7 @@ const ExploreByCategory = () => {
           ))
         )}
       </div>
+    </div>
     </div>
   );
 };

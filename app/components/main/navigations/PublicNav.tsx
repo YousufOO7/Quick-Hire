@@ -1,4 +1,4 @@
-import ButtonLoader from "@/app/utils/common/ButtonLoader";
+
 import { publicNavigationLinks } from "@/app/utils/constant/navigations/publicNavigationLinks";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { FaFirefoxBrowser } from "react-icons/fa";
 const PublicNav = () => {
   const pathname = usePathname();
   return (
-    <nav className="border-b">
+    <nav className="border-b bg-[#F8F8FD]">
       <div className="container mx-auto flex items-center justify-between  px-4">
         {/* Nav Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium  text-gray-600">
@@ -32,7 +32,7 @@ const PublicNav = () => {
           ))}
         </div>
 
-        <Button variant="outline" size="sm" className="cursor-pointer text-blue-600">
+        <Button variant="outline" size="sm" className="cursor-pointer text-blue-600 hidden md:block">
           Login
         </Button>
       </div>

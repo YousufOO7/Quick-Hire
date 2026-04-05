@@ -6,10 +6,14 @@ interface Props {
 
 const LatestJobsCard = ({ job }: Props) => {
   return (
+    <div className="bg-white p-4 hover:shadow-sm transition">
+       <div className="w-12 md:hidden h-12 flex items-center justify-center bg-white rounded-lg font-bold text-gray-700">
+        {job.logo}
+      </div>
     <div className="flex items-start gap-4 bg-white p-4 hover:shadow-sm transition">
       
       {/* Logo */}
-      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg font-bold text-gray-700">
+      <div className="w-12 h-12 hidden md:block flex items-center justify-center bg-white rounded-lg font-bold text-gray-700">
         {job.logo}
       </div>
 
@@ -50,6 +54,7 @@ const LatestJobsCard = ({ job }: Props) => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

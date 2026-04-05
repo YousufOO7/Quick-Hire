@@ -8,7 +8,7 @@ import JobsToday from '../pages/jobsToday/JobsToday';
 
 const HomeComponents = () => {
     return (
-        <div >
+        <div className=''>
             <Banner />
             <Marquee />
             <ExploreByCategory />

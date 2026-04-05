@@ -24,7 +24,7 @@ const SingleJobDetails = () => {
   if (!job) return <p className="text-center mt-10">Job not found.</p>;
 
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-8">
+    <div className="max-w-5xl mx-auto p-3 md:p-6 space-y-8">
       {/* Job Info */}
       <div className="flex flex-col md:flex-row items-start md:items-center gap-6 bg-white p-6 rounded-lg shadow-md">
         <Image

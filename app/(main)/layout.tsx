@@ -10,7 +10,7 @@ export default function MainLayout({
 }) {
 
   return (
-    <div className="max-w-[1440px] mx-auto bg-[#F8F8FD]">
+    <div className="max-w-[1440px] mx-auto">
       <PublicNav  />
       <MobileNav />
       <main>{children}</main>

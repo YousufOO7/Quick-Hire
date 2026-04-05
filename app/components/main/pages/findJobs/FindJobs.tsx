@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -26,7 +27,6 @@ const FindJobs = () => {
     page: 1,
   });
 
-  console.log("Jobs Data:", jobsData);
 
   // Extract unique locations and categories from the API data
   useEffect(() => {
@@ -115,7 +115,7 @@ const FindJobs = () => {
   }
 
   return (
-    <div className="py-10">
+    <div className="py-3 px-4 md:px-0 md:py-10">
       <div className="max-w-xl">
         <h1 className="text-5xl font-bold mb-4">Find Your Dream Job</h1>
         <p className="text-gray-600 mb-8">

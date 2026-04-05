@@ -7,7 +7,7 @@ import Footer from "../components/main/navigations/Footer";
 export default function HomePage() {
   return (
     <>
-    <div className="container mx-auto">
+    <div>
       <div >
         <PublicNav />
         <MobileNav />

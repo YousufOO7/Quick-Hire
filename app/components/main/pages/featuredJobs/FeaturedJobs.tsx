@@ -23,16 +23,17 @@ const FeaturedJobs = () => {
        fetchFeaturedJobs();
      }, []);
   return (
-    <div>
+    <div className="container mx-auto">
+    <div className="w-full bg-white px-4 md:px-0">
       <div className="flex justify-between items-center">
-        <h2 className="text-5xl font-semibold mb-8">
+        <h2 className="text-3xl md:text-5xl font-semibold mb-8 mt-5">
           Featured<span className="text-blue-500">Jobs</span>
         </h2>
-        <p className="text-blue-500 text-[16px]">Show all jobs</p>
+        <p className="text-blue-500 text-[16px] hidden md:block">Show all jobs</p>
       </div>
 
       {/* featured jobs card */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10">
         {loading ? (
           <p>Loading categories...</p>
         ) : (
@@ -41,6 +42,8 @@ const FeaturedJobs = () => {
           ))
         )}
       </div>
+        <p className="text-blue-500 text-[16px]  md:hidden">Show all jobs</p>
+    </div>
     </div>
   );
 };

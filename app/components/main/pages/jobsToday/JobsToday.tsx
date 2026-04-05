@@ -8,14 +8,14 @@ import { Button } from "@/components/ui/button";
 const JobsToday = () => {
   return (
     <div
-      className="w-full overflow-hidden my-20"
+      className="w-full overflow-hidden md:my-20"
       style={{
         backgroundImage: `url(${bgLogo.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="flex flex-col lg:flex-row items-center justify-between px-20  py-16 gap-10">
+      <div className="flex flex-col lg:flex-row items-center justify-between px-8 md:px-20  py-8 md:py-16 gap-10">
         
         {/* LEFT CONTENT */}
         <div className="text-white max-w-xl">

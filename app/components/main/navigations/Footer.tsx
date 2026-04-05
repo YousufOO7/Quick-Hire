@@ -1,23 +1,24 @@
 "use client";
 
-import { FaTwitter, FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaLinkedinIn, FaGithub, FaFirefoxBrowser } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black">
-      <div className="container mx-auto py-16">
+    <footer className="bg-black overflow-hidden">
+      <div className="container mx-auto py-16 px-4 md:px-0">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 ">
+        <div className="md:flex md:justify-between  mb-12 ">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <h2 className="text-2xl font-bold text-white mb-4">QuickHire</h2>
+          <div className="">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-1"><span><FaFirefoxBrowser className="text-blue-600" /></span> QuickHire</h2>
             <p className="text-gray-400 text-sm leading-relaxed">
               Great platform for the job seeker that passionate about startups.
               Find your dream job easier.
             </p>
           </div>
 
-          {/* About Section */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-5 md:mt-0">
+            {/* About Section */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               About
@@ -108,7 +109,26 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Section */}
-          <div>
+          <div className="hidden md:block">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Get job notifications
+            </h3>
+            <p className="text-gray-400 text-sm mb-4">
+              The latest job news, articles, sent to your inbox weekly.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white text-black"
+              />
+              <button className="px-6 py-2 bg-blue-600 text-white  hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 md:mt-0 md:hidden">
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Get job notifications
             </h3>

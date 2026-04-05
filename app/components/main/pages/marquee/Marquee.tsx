@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import vector from "@/app/assets/Vector.png";
 import vodafone from "@/app/assets/vodafone.png";
 import tesla from "@/app/assets/TESLA.png";
@@ -11,59 +10,28 @@ const Marquee = () => {
   const logos = [vodafone, vector, tesla, group, talkit];
 
   return (
-    <div className="w-full mb-20 mt-40 overflow-hidden">
-      
+    <div className="w-full py-2 bg-white mt-5">
+    <div className="container mx-auto px-4 md:px-0 overflow-hidden">
       {/* Title */}
       <p className="text-left text-gray-400 text-sm mb-6">
         Companies we helped grow
       </p>
 
-      {/* Marquee Wrapper */}
-      <div className="relative overflow-hidden">
-        
-        {/* Gradient fade (left) */}
-        <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#F5F5F5] to-transparent z-10" />
-        
-        {/* Gradient fade (right) */}
-        <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#F5F5F5] to-transparent z-10" />
-
-        <motion.div
-          className="flex gap-20 items-center"
-          initial={{ x: "0%" }}
-          animate={{ x: "-100%" }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 20,
-          }}
-        >
-          {/* First set */}
-          {logos?.map((logo, index) => (
-            <div key={index} className="opacity-60 hover:opacity-100 transition">
-              <Image
-                src={logo}
-                alt="company logo"
-                width={480}
-                height={180}
-                className=" grayscale hover:grayscale-0 transition duration-300"
-              />
-            </div>
-          ))}
-
-          {/* Duplicate set for smooth loop */}
-          {logos?.map((logo, index) => (
-            <div key={`dup-${index}`} className="opacity-60 hover:opacity-100 transition">
-              <Image
-                src={logo}
-                alt="company logo"
-                width={480}
-                height={180}
-                className=" grayscale hover:grayscale-0 transition duration-300"
-              />
-            </div>
-          ))}
-        </motion.div>
+      {/* Logo Row */}
+      <div className="grid grid-cols-2  md:grid-cols-5 gap-8 md:gap-20 scrollbar-hide py-4">
+        {logos?.map((logo, index) => (
+          <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 ">
+            <Image
+              src={logo}
+              alt="company logo"
+              width={160}
+              height={60}
+              className="object-contain"
+            />
+          </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 };
