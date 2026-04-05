@@ -19,17 +19,7 @@ export const apiSlice = createApi({
   baseQuery: customBaseQuery,
   endpoints: () => ({}),
   tagTypes: [
-    "User",
-    "vehicle-classes",
-    "vehicles",
-    "drivers",
-    "customers",
-    "system-config",
+   "jobs",
     "bookings",
-    "user",
-    "dashboard-summary",
-    "company",
-    "affiliates",
-    "customer"
   ],
 });

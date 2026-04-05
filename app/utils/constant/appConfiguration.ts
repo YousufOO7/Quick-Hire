@@ -20,7 +20,7 @@ export const appConfiguration: IConfigurationProps = {
   appName: "Ride System",
   NODE_ENV:"development",
   appCode: "__t_beta__",
-  baseUrl: "https://dev.squarelimousine.com/api/", 
+  baseUrl: "http://localhost:5000", 
   PUBLIC_SITE_URL: "http://localhost:3000",
   favicon: "/devs.png",
   invoiceBanner:"/",
@@ -29,19 +29,3 @@ export const appConfiguration: IConfigurationProps = {
   progressMessage:
     "Thank you for your interest! 🚀 We're currently working on implementing this feature. Stay tuned, as we'll be activating it very soon!",
 };
-
-//////////// PRODUCTION VERSION ////////////
-// export const appConfiguration: IConfigurationProps = {
-//   appName: "Kry International",
-//   NODE_ENV:"production",
-//   appCode: "__kry_production__",
-//   baseUrl: "https://api.kryinternational.com/api/v1",
-//   PUBLIC_SITE_URL: "https://kryinternational.com",
-//   favicon: "/devs.png",
-//   invoiceBanner:"/invoice-bg.jpg",
-//   logo: "/src/assets/longeng.png",
-//   seoLogo: "/logo.jpg",
-//   version,
-//   progressMessage:
-//     "Thank you for your interest! 🚀 We're currently working on implementing this feature. Stay tuned, as we'll be activating it very soon!",
-// };

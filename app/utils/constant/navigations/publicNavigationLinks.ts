@@ -10,46 +10,11 @@ export interface INavigationLinks {
 
 // Main navigation links
 export const publicNavigationLinks: INavigationLinks[] = [
-  // {
-  //   icon: LuUsers,
-  //   label: "Home",
-  //   key: "home",
-  //   href: "/",
-  // },
+
   {
     icon: LuListOrdered,
-    label: "BOOk A RIDE",
-    key: "book-a-ride",
-    href: "/book-a-ride",
-  },
-  {
-    icon: LuListOrdered,
-    label: "Price Quote",
-    key: "price-quote-component",
-    href: "/price-quote-component",
-  },
-  // {
-  //   icon: LuListOrdered,
-  //   label: "Price Quote",
-  //   key: "price-quote",
-  //   href: "/price-quote",
-  // },
-  // {
-  //   icon: LuListOrdered,
-  //   label: "Quick Receipt",
-  //   key: "quick-receipt",
-  //   href: "/quick-receipt",
-  // },
-  // {
-  //   icon: LuListOrdered,
-  //   label: "Manage Reservation",
-  //   key: "manage-reservation",
-  //   href: "/manage-reservation",
-  // },
-  {
-    icon: LuListOrdered,
-    label: "Customer Profile",
-    key: "/profile/my-profile",
-    href: "/profile/my-profile",
-  },
+    label: "Find Jobs",
+    key: "find-jobs",
+    href: "/find-jobs",
+  }
 ];

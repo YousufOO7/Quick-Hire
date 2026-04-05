@@ -9,8 +9,8 @@ export type JobTag =
   | "QA"
   | "Analytics";
 
-export interface FeaturedJob {
-  id: number;
+export interface FindJob {
+  _id: number;
   title: string;
   company: string;
   location: string;
