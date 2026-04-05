@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import { Category } from "@/app/types/categories";
