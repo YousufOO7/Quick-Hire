@@ -1,4 +1,3 @@
-
 import { publicNavigationLinks } from "@/app/utils/constant/navigations/publicNavigationLinks";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -32,9 +31,25 @@ const PublicNav = () => {
           ))}
         </div>
 
-        <Button variant="outline" size="sm" className="cursor-pointer text-blue-600 hidden md:block">
-          Login
-        </Button>
+        <div className="flex gap-5 items-center">
+          <Link href="/quick-admin-portal/add-jobs">
+            <Button
+              variant="outline"
+              size="sm"
+              className="cursor-pointer text-blue-600 hidden md:block"
+            >
+              Login
+            </Button>
+          </Link>
+
+          <Button
+            variant="outline"
+            size="sm"
+            className="cursor-pointer text-blue-600 hidden md:block"
+          >
+            Registration
+          </Button>
+        </div>
       </div>
     </nav>
   );
