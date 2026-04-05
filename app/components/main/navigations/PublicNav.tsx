@@ -45,9 +45,9 @@ const PublicNav = () => {
           <Button
             variant="outline"
             size="sm"
-            className="cursor-pointer text-blue-600 hidden md:block"
+            className="cursor-pointer text-white bg-blue-600 hidden md:block"
           >
-            Registration
+            Sign Up
           </Button>
         </div>
       </div>
