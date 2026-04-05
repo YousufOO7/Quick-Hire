@@ -5,6 +5,8 @@ Quick Hire is a modern, responsive job portal built with **Next.js**, **Tailwind
 
 ---
 
+##Quick Check the video: https://www.loom.com/share/13d17359b51a4ca19ea8713311af07f1
+
 ## Features
 
 ### User Side
