@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Email Marketing",
+    "company": "Revolut",
+    "location": "Madrid, Spain",
+    "type": "Full Time",
+    "description": "Revolut is looking for Email Marketing to help team...",
+    "tags": ["Marketing", "Design"],
+    "logo": "R"
+  },
+  {
+    "id": 2,
+    "title": "Brand Designer",
+    "company": "Dropbox",
+    "location": "San Francisco, US",
+    "type": "Full Time",
+    "description": "Dropbox is looking for Brand Designer to help team...",
+    "tags": ["Design", "Business"],
+    "logo": "D"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "company": "Figma",
+    "location": "Remote",
+    "type": "Full Time",
+    "description": "Figma is hiring UI/UX Designer for product team...",
+    "tags": ["Design", "Product"],
+    "logo": "F"
+  },
+  {
+    "id": 4,
+    "title": "Frontend Developer",
+    "company": "Google",
+    "location": "California, US",
+    "type": "Full Time",
+    "description": "Google is hiring Frontend Developer for web apps...",
+    "tags": ["Development", "React"],
+    "logo": "G"
+  },
+  {
+    "id": 5,
+    "title": "Backend Developer",
+    "company": "Amazon",
+    "location": "Seattle, US",
+    "type": "Full Time",
+    "description": "Amazon is hiring Backend Developer for APIs...",
+    "tags": ["Node", "API"],
+    "logo": "A"
+  },
+  {
+    "id": 6,
+    "title": "Product Manager",
+    "company": "Meta",
+    "location": "Remote",
+    "type": "Full Time",
+    "description": "Meta is hiring Product Manager for growth team...",
+    "tags": ["Business", "Management"],
+    "logo": "M"
+  },
+  {
+    "id": 7,
+    "title": "Data Analyst",
+    "company": "Netflix",
+    "location": "Los Angeles, US",
+    "type": "Full Time",
+    "description": "Netflix is looking for Data Analyst...",
+    "tags": ["Data", "Analytics"],
+    "logo": "N"
+  },
+  {
+    "id": 8,
+    "title": "QA Engineer",
+    "company": "Spotify",
+    "location": "Stockholm, Sweden",
+    "type": "Full Time",
+    "description": "Spotify is hiring QA Engineer for testing apps...",
+    "tags": ["Testing", "QA"],
+    "logo": "S"
+  }
+]
