@@ -20,7 +20,7 @@ export const appConfiguration: IConfigurationProps = {
   appName: "QuickHire",
   NODE_ENV:"development",
   appCode: "__t_beta__",
-  baseUrl: "http://localhost:5000", 
+  baseUrl: "https://quick-hire-backend-flax.vercel.app", 
   PUBLIC_SITE_URL: "http://localhost:3000",
   favicon: "/devs.png",
   invoiceBanner:"/",
