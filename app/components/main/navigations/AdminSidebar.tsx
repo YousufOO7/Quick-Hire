@@ -2,48 +2,24 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
 import { FiChevronsRight } from "react-icons/fi";
-import { LucideLogOut } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { shareWithCookies } from "@/app/utils/helper/shareWithCookies";
-import { appConfiguration } from "@/app/utils/constant/appConfiguration";
 import useSidebar from "@/app/hooks/useSidebar";
 import { adminNavigationLinks } from "@/app/utils/helper/adminNavigationLink";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { useAppConfig } from "@/app/utils/helper/useAppConfig";
-import ButtonLoader from "@/app/utils/common/ButtonLoader";
+import { FaFirefoxBrowser } from "react-icons/fa";
 
 
 const AdminSidebarNavigation = () => {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [activeSubSubmenu, setActiveSubSubmenu] = useState<string | null>(null);
-  const router = useRouter();
   const pathname = usePathname();
   const { open, isOpen, onClose } = useSidebar();
 
-  const handleLogout = async () => {
-    shareWithCookies("remove", `${appConfiguration.appCode}token`);
-    router.push('/rider-admin-auth/admin-login');
-    router.refresh();
-  };
 
   const isActive = (href: string) => pathname === href;
-  const {platformName, isLoading, primaryColor, secondaryColor} = useAppConfig();
 
   return (
     <section
@@ -54,10 +30,8 @@ const AdminSidebarNavigation = () => {
         initial={{ width: 70 }}
         animate={{ width: open ? 260 : 70 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 z-20 hidden lg:block  text-white dark:bg-background dark:shadow-2xl px-5 h-full overflow-hidden`}
-        style={{
-    backgroundColor: isLoading ? "#000000" : primaryColor,
-  }}
+        className={`fixed top-0 left-0 z-20 hidden lg:block bg-black text-white dark:bg-background dark:shadow-2xl px-5 h-full overflow-hidden`}
+       
       >
         {/* BRAND HEADER */}
         <div className="p-4 flex items-center justify-between">
@@ -68,7 +42,10 @@ const AdminSidebarNavigation = () => {
               transition={{ duration: 0.2 }}
               className={`text-2xl font-semibold ${!open && "hidden"}`}
             >
-              <span>{isLoading ? <ButtonLoader /> : platformName}</span>
+             <p className="gap-1 flex items-center">
+                           <FaFirefoxBrowser className="text-blue-600" />
+                           <span>Quick Hire</span>
+                         </p>
             </motion.h1>
           </Link>
           <button
@@ -249,61 +226,8 @@ const AdminSidebarNavigation = () => {
           </ul>
         </nav>
 
-        <Link
-          href="/rider-admin-portal/admin-profile"
-          className="flex items-center justify-between px-3 py-2 border rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
-        >
-          <span>Admin Profile</span>
-          <RiLockPasswordFill size={20} />
-        </Link>
 
-        {/* LOGOUT BUTTON */}
-        <div>
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button
-                style={!isLoading ? { backgroundColor: secondaryColor } : undefined}
-                size="sm"
-                className={cn(
-                  "cursor-pointer flex h-8 my-4 items-center justify-center text-white",
-                  open
-                    ? "w-full mx-auto"
-                    : "rounded-full"
-                )}
-              >
-                <LucideLogOut className="size-4 mr-1" />
-                {open && <span>Logout</span>}
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>
-                  Are you absolutely sure?
-                </AlertDialogTitle>
-                <AlertDialogDescription>
-                  Are you sure you want to log out? Logging out will end your current session.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel className="btn-destructive-fill customer-pointer">
-                  Cancel
-                </AlertDialogCancel>
-                <AlertDialogAction onClick={handleLogout} className="cursor-pointer">
-                  Confirm
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-          <p
-            className={cn(
-              "text-center text-gray-500 text-xs opacity-75",
-              !open && "hidden"
-            )}
-          >
-            Version:{" "}
-            <span className="lowercase">{appConfiguration.version}</span>
-          </p>
-        </div>
+       
       </motion.aside>
     </section>
   );

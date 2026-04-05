@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useGetAllJobsQuery } from "@/app/redux/features/bookings/jobsApi";
+import { useGetAllJobsQuery } from "@/app/redux/features/jobs/jobsApi";
 import FindJobsCard from "./FindJobsCard";
 import { FindJob } from "@/app/types/findJobs";
 

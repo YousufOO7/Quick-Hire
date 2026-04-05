@@ -5,11 +5,28 @@ export const jobsApi = apiSlice.injectEndpoints({
     // jobs data
     createJobs: builder.mutation({
       query: (jobsData) => ({
-        url: "/create-jobs",
+        url: "/add-jobs",
         method: "POST",
         body: jobsData,
       }),
       invalidatesTags: ["jobs"],
+    }),
+
+    jobsApplications: builder.mutation({
+      query: (jobsApplicationData) => ({
+        url: "/applications",
+        method: "POST",
+        body: jobsApplicationData,
+      }),
+      invalidatesTags: ["jobs"],
+    }),
+
+     getAllJobsApplications: builder.query({
+      query: () => ({
+        url: "/allJobsApplications",
+        method: "GET",
+      }),
+      providesTags: ["jobs"],
     }),
 
 
@@ -35,6 +52,13 @@ export const jobsApi = apiSlice.injectEndpoints({
       providesTags: ["jobs"],
     }),
 
+     deleteJob: builder.mutation({
+      query: (id) => ({
+        url: `/add-jobs/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["jobs"],
+    }),
   
   }),
 });
@@ -44,4 +68,7 @@ export const {
   useCreateJobsMutation,
   useGetAllJobsQuery,
   useGetJobByIdQuery,
+  useDeleteJobMutation,
+  useJobsApplicationsMutation,
+  useGetAllJobsApplicationsQuery,
 } = jobsApi;

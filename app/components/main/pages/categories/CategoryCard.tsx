@@ -16,11 +16,11 @@ const CategoryCard = ({ categories }: CategoryCardProps) => {
     
     {/* Image */}
     <Image
-      width={48}
-      height={48}
+      width={38}
+      height={38}
       src={categories?.logo}
       alt={categories.title}
-      className="w-12 h-12 object-contain lg:w-16 lg:h-16"
+      className="w-9 h-8 object-contain lg:w-16 lg:h-16"
     />
 
     {/* Text Content */}
@@ -28,8 +28,8 @@ const CategoryCard = ({ categories }: CategoryCardProps) => {
       <h3 className="text-base lg:text-xl font-semibold">
         {categories.title}
       </h3>
-      <p className="text-gray-500 text-sm md:text-base">
-        {categories.text}
+      <p className="text-gray-500 text-sm md:text-base flex justify-between">
+        {categories.text} <span className="hidden md:block">{categories.arrow}</span>
       </p>
     </div>
   </div>
@@ -38,11 +38,6 @@ const CategoryCard = ({ categories }: CategoryCardProps) => {
   <div className="md:hidden">
     {categories.arrow}
   </div>
-
-  {/* lg device text + arrow */}
-  {/* <p className="text-gray-500 hidden md:block mt-2">
-    {categories.text} <span>{categories.arrow}</span>
-  </p> */}
 </div>
   );
 };

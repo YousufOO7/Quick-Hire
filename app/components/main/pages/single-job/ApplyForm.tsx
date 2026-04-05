@@ -1,12 +1,15 @@
 "use client";
 
+import { useJobsApplicationsMutation } from "@/app/redux/features/jobs/jobsApi";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 interface ApplyFormProps {
   jobTitle: string;
+  jobId: string; // 👈 IMPORTANT (you need job_id)
 }
 
-const ApplyForm = ({ jobTitle }: ApplyFormProps) => {
+const ApplyForm = ({ jobId }: ApplyFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,25 +19,75 @@ const ApplyForm = ({ jobTitle }: ApplyFormProps) => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [jobsApplications, { isLoading }] = useJobsApplicationsMutation();
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+  // required fields
+  if (!formData.name || !formData.email || !formData.resume || !formData.coverNote) {
+    return "All fields are required";
+  }
+
+  // email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    return "Invalid email format";
+  }
+
+  // URL validation
+  try {
+    new URL(formData.resume);
+  } catch {
+    return "Invalid resume link (must be a valid URL)";
+  }
+
+  return null;
+};
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // You can replace this with your API POST call
-    console.log("Application submitted:", { jobTitle, ...formData });
+  const errorMsg = validateForm();
 
-    setSubmitted(true);
-    setFormData({ name: "", email: "", resume: "", coverNote: "" });
+  if (errorMsg) {
+    toast.error(errorMsg); 
+    return;
+  }
+
+    try {
+      const payload = {
+        job_id: jobId, // 👈 must send
+        name: formData.name,
+        email: formData.email,
+        resume_link: formData.resume,
+        cover_note: formData.coverNote,
+        created_at: new Date().toISOString(),
+      };
+
+       await jobsApplications(payload).unwrap();
+
+      toast.success("Application submitted successfully!");
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", resume: "", coverNote: "" });
+    } catch (error) {
+      console.error("Application failed:", error);
+    }
   };
 
   return (
     <div>
       {submitted && (
-        <p className="text-green-600 mb-4">Your application has been submitted!</p>
+        <p className="text-green-600 mb-4">
+          Your application has been submitted!
+        </p>
       )}
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block mb-1 font-medium">Name</label>
@@ -44,7 +97,7 @@ const ApplyForm = ({ jobTitle }: ApplyFormProps) => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full border rounded-md p-2"
           />
         </div>
 
@@ -56,20 +109,19 @@ const ApplyForm = ({ jobTitle }: ApplyFormProps) => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full border rounded-md p-2"
           />
         </div>
 
         <div>
-          <label className="block mb-1 font-medium">Resume Link (URL)</label>
+          <label className="block mb-1 font-medium">Resume Link</label>
           <input
             type="url"
             name="resume"
             value={formData.resume}
             onChange={handleChange}
             required
-            placeholder="https://example.com/resume.pdf"
-            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full border rounded-md p-2"
           />
         </div>
 
@@ -81,15 +133,16 @@ const ApplyForm = ({ jobTitle }: ApplyFormProps) => {
             onChange={handleChange}
             required
             rows={4}
-            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full border rounded-md p-2"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+          disabled={isLoading}
+          className="bg-blue-600 text-white px-6 py-2 rounded-md"
         >
-          Submit Application
+          {isLoading ? "Submitting..." : "Submit Application"}
         </button>
       </form>
     </div>

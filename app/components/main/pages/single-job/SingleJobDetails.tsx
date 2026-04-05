@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import ApplyForm from "./ApplyForm";
-import { useGetJobByIdQuery } from "@/app/redux/features/bookings/jobsApi";
+import { useGetJobByIdQuery } from "@/app/redux/features/jobs/jobsApi";
 import Image from "next/image";
 
 const SingleJobDetails = () => {
@@ -67,7 +67,7 @@ const SingleJobDetails = () => {
       {/* Apply Form */}
       <div className="bg-white p-6 rounded-lg shadow-md mt-8">
         <h2 className="text-2xl font-semibold mb-4">Apply Now</h2>
-        <ApplyForm jobTitle={job.title} />
+        <ApplyForm jobTitle={job.title} jobId={job._id} />
       </div>
     </div>
   );
