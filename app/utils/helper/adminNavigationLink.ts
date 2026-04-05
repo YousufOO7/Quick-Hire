@@ -18,8 +18,8 @@ const admindashboardRootLinks: INavigationLink = {
   label: {
     en: "Job List",
   },
-  key: "/quick-admin-portal",
-  href: "/quick-admin-portal",
+  key: "/quick-admin-portal/add-jobs",
+  href: "/quick-admin-portal/add-jobs",
 };
 
 const applicationsListLink: INavigationLink = {
