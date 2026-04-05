@@ -1,13 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client"
 import { createContext, useState, useContext, ReactNode, useEffect, useMemo, useCallback } from "react";
 import toast from "react-hot-toast";
-import { Product } from "../types/product";
 
 // Define the shape of your context
 interface WishContextType {
-  wish: Product[];
-  addToWish: (product: Product) => void;
+  wish: any[];
+  addToWish: (product: any) => void;
   removeFromWish: (productId: number) => void;
   isProductInWishList: (productId: number) => boolean;
 }
@@ -21,7 +21,7 @@ interface WishListProviderProps {
 }
 
 export const WishListProvider = ({ children }: WishListProviderProps) => {
-  const [wish, setWish] = useState<Product[]>([]);
+  const [wish, setWish] = useState<any[]>([]);
 
   useEffect(() => {
     try {
@@ -36,7 +36,7 @@ export const WishListProvider = ({ children }: WishListProviderProps) => {
     }
   }, []);
 
-  const addToWish = useCallback((product: Product) => {
+  const addToWish = useCallback((product: any) => {
     const existingProduct = wish.find((item) => item.id === product.id);
 
     if (existingProduct) {

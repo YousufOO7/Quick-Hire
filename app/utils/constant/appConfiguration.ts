@@ -17,7 +17,7 @@ const version = "V1.0.0";
 //////////// BETA VERSION ////////////
 
 export const appConfiguration: IConfigurationProps = {
-  appName: "Ride System",
+  appName: "QuickHire",
   NODE_ENV:"development",
   appCode: "__t_beta__",
   baseUrl: "http://localhost:5000", 
