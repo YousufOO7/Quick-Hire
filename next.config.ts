@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     images: {
     domains: [
       "Vector.caa571cb.png",
-      ""
+      "https://ibb.co.com",
     ],
   },
 };

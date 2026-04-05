@@ -11,7 +11,7 @@ const Marquee = () => {
   const logos = [vodafone, vector, tesla, group, talkit];
 
   return (
-    <div className="w-full  my-40 overflow-hidden">
+    <div className="w-full mb-20 mt-40 overflow-hidden">
       
       {/* Title */}
       <p className="text-left text-gray-400 text-sm mb-6">
@@ -43,9 +43,9 @@ const Marquee = () => {
               <Image
                 src={logo}
                 alt="company logo"
-                width={120}
-                height={40}
-                className="object-contain grayscale hover:grayscale-0 transition duration-300"
+                width={480}
+                height={180}
+                className=" grayscale hover:grayscale-0 transition duration-300"
               />
             </div>
           ))}
@@ -56,9 +56,9 @@ const Marquee = () => {
               <Image
                 src={logo}
                 alt="company logo"
-                width={120}
-                height={40}
-                className="object-contain grayscale hover:grayscale-0 transition duration-300"
+                width={480}
+                height={180}
+                className=" grayscale hover:grayscale-0 transition duration-300"
               />
             </div>
           ))}
