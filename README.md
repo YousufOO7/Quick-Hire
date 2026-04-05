@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quick Hire - Job Portal
 
-## Getting Started
 
-First, run the development server:
+Quick Hire is a modern, responsive job portal built with **Next.js**, **Tailwind CSS**, **Shadcn UI**, **Redux Toolkit**, and **RTK Query**. The backend uses **Node.js**, **Express**, and **MongoDB**. Users can browse and apply for jobs, while admins can manage job listings and applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### User Side
+- **Job Listings Page**
+  - View all available jobs
+  - Search jobs by title or keyword
+  - Filter jobs by **category** or **location**
+  - Fully responsive layout  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Job Detail Page**
+  - Full job description
+  - “Apply Now” form:
+    - Name
+    - Email
+    - Resume link (URL)
+    - Cover note
+  - Form submissions visible to admin  
 
-## Learn More
+### Admin Side
+- **Job Management**
+  - Add new jobs with required fields
+  - Delete existing jobs
+  - View all jobs in a clean, responsive UI  
 
-To learn more about Next.js, take a look at the following resources:
+- **Application Management**
+  - View all submitted job applications  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### UI/UX
+- Clean, professional, and responsive design
+- Reusable components
+- Organized folder structure and clean naming conventions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Frontend:**
+- Next.js  
+- Tailwind CSS  
+- Shadcn UI components  
+- Redux Toolkit & RTK Query  
+- React Hot Toast  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Backend:**
+- Node.js & Express.js  
+- MongoDB (Atlas or local)
+- Mongoose  
+-Github Link: https://github.com/YousufOO7/quick-hire-backend
+
+**APIs:**
+- **Jobs**
+  - `GET /api/jobs` – List all jobs  
+  - `GET /api/jobs/:id` – Get single job details  
+  - `POST /api/jobs` – Create a job (Admin)  
+  - `DELETE /api/jobs/:id` – Delete a job (Admin)  
+
+- **Applications**
+  - `POST /api/applications` – Submit job application  
