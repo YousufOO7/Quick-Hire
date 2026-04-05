@@ -8,7 +8,7 @@ import LatestJobs from '../pages/latestJobs/LatestJobs';
 
 const HomeComponents = () => {
     return (
-        <div className='space-y-2'>
+        <div >
             <Banner />
             <Marquee />
             <ExploreByCategory />

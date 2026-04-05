@@ -1,4 +1,5 @@
 "use client";
+import Footer from "../components/main/navigations/Footer";
 import MobileNav from "../components/main/navigations/MobileNav";
 import PublicNav from "../components/main/navigations/PublicNav";
 
@@ -13,6 +14,7 @@ export default function MainLayout({
       <PublicNav  />
       <MobileNav />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 }

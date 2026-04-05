@@ -23,8 +23,8 @@ const ExploreByCategory = () => {
   }, []);
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <h2 className="text-5xl font-semibold mb-4">
+      <div className="flex justify-between items-center mt-10 pt-10">
+        <h2 className="text-5xl font-semibold mb-8">
           Explore by <span className="text-blue-500">Category</span>
         </h2>
         <p className="text-blue-500 text-[16px]">Show all jobs</p>

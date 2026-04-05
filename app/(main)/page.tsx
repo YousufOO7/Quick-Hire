@@ -2,9 +2,11 @@
 import PublicNav from "../components/main/navigations/PublicNav";
 import MobileNav from "../components/main/navigations/MobileNav";
 import HomeComponents from "../components/main/home-components/HomeComponents";
+import Footer from "../components/main/navigations/Footer";
 
 export default function HomePage() {
   return (
+    <>
     <div className="container mx-auto">
       <div >
         <PublicNav />
@@ -12,6 +14,8 @@ export default function HomePage() {
       </div>
      <HomeComponents />
     </div>
+    <Footer />
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ type CategoryCardProps = {
 
 const CategoryCard = ({ categories }: CategoryCardProps) => {
   return (
-    <div className="p-4 border">
+    <div className="p-4 border bg-white">
       <Image
         width={48}
         height={48}

@@ -23,8 +23,8 @@ const LatestJobs = () => {
            fetchLatestJobs();
          }, []);
   return (
-    <div>
-      <div className="flex justify-between items-center">
+    <div >
+      <div className="flex justify-between items-center mt-10 pt-10">
         <h2 className="text-5xl font-semibold mb-8">
           Latest<span className="text-blue-500">Jobs Open</span>
         </h2>
@@ -32,7 +32,7 @@ const LatestJobs = () => {
       </div>
 
        {/* latest jobs card */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {loading ? (
           <p>Loading categories...</p>
         ) : (

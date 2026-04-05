@@ -25,7 +25,7 @@ const Banner = () => {
     </div>
 
     {/* SEARCH BOX */}
-    <div className="mt-8 bg-white shadow-md rounded-lg flex items-center p-2 w-full relative z-10">
+    <div className="mt-8 bg-white shadow-md  flex items-center p-2 w-full relative z-10">
       {/* Job Input */}
       <div className="flex items-center flex-1 px-3">
         <Search className="text-gray-400 w-4 h-4 mr-2" />
@@ -48,7 +48,7 @@ const Banner = () => {
       </div>
 
       {/* Button */}
-      <button className="bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">
+      <button className="bg-blue-600 text-white px-5 py-2  text-sm font-medium hover:bg-blue-700 transition">
         Search my job
       </button>
     </div>

@@ -6,7 +6,7 @@ interface Props {
 
 const LatestJobsCard = ({ job }: Props) => {
   return (
-    <div className="flex items-start gap-4 bg-white rounded-xl p-4 hover:shadow-sm transition">
+    <div className="flex items-start gap-4 bg-white p-4 hover:shadow-sm transition">
       
       {/* Logo */}
       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg font-bold text-gray-700">
