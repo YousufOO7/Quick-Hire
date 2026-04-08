@@ -20,7 +20,7 @@ export const appConfiguration: IConfigurationProps = {
   appName: "QuickHire",
   NODE_ENV:"development",
   appCode: "__t_beta__",
-  baseUrl: "https://quick-hire-backend-qumg.onrender.com", 
+  baseUrl: "https://quick-hire-backend-orpin.vercel.app", 
   PUBLIC_SITE_URL: "http://localhost:3000",
   favicon: "/devs.png",
   invoiceBanner:"/",
