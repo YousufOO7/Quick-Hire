@@ -51,7 +51,7 @@ const AdminNavbar = () => {
 
             {/* Logo */}
             <div className="text-lg font-semibold md:ml-0 mx-auto md:mx-0">
-              <p className="font-bold">Welcome To Rider Dashboard</p>
+              <p className="font-bold">Welcome To Quick Hire Dashboard</p>
             </div>
 
             {/* Desktop Navigation */}
